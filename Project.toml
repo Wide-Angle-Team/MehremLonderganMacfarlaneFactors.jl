@@ -1,0 +1,13 @@
+name = "MehremLonderganMacfarlaneFactors"
+uuid = "9c8a161c-d3f7-420d-8d49-ed91ce02d8d6"
+authors = ["Henry Gebhardt <hsggebhardt@fastmail.com> and contributors"]
+version = "0.0.1"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
