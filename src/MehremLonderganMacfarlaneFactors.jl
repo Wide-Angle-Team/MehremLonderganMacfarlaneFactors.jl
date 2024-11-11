@@ -10,16 +10,12 @@ using Jacobi: legendre
 
 
 
-function mehremlonderganmacfarlanefactor(l1, l2, l3, k1::T, k2::T, k3::T) where {T<:Real}
+function mehremlonderganmacfarlanefactor(l1, l2, l3, k1, k2, k3)
     mlm3j = mehremlonderganmacfarlanefactor3j(l1, l2, l3, k1, k2, k3)
-    w3j000 = wigner3j000(T, l1, l2, l3)
+    w3j000 = wigner3j000(eltype(promote(k1, k2, k3)), l1, l2, l3)
     mlm = mlm3j / w3j000
     @debug "mlm" l1,l2,l3 k1,k2,k3 w3j000 mlm
     return mlm
-end
-
-mehremlonderganmacfarlanefactor(l1, l2, l3, k1, k2, k3) = begin
-    mehremlonderganmacfarlanefactor(l1, l2, l3, promote(k1, k2, k3)...)
 end
 
 
