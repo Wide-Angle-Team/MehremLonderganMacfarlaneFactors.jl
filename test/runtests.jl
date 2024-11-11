@@ -63,4 +63,18 @@ using Test
     @test mehremlonderganmacfarlanefactor(4, 4, 4, 1.0, 1.05, 0.06) ≈ -1.511653808097  rtol=1e-12 atol=3*abs(-1.511653806929 - -1.511653808097)  # catastrophic cancellation
     @test mehremlonderganmacfarlanefactor(0, 0, 0, 1.0, 1.02, 0.03) ≈  25.6666066469758  rtol=1e-12 atol=abs(25.6666066469754 - 25.6666066469758)
     @test mehremlonderganmacfarlanefactor(4, 4, 4, 1.0, 1.02, 0.03) ≈ -10.9755226591813  rtol=1e-12 atol=abs(-10.9755226231663 - -10.9755226591813)
+
+
+    # BigFloat
+    @test mehremlonderganmacfarlanefactor(0, 0, 0, 1.0, 1.05, big(0.06)) ≈ 12.46663751425  rtol=1e-12
+    @test mehremlonderganmacfarlanefactor(4, 4, 4, 1.0, 1.05, big(0.06)) ≈ -1.511653808097  rtol=1e-12
+    @test mehremlonderganmacfarlanefactor(0, 0, 0, 1.0, 1.02, big(0.03)) ≈  25.6666066469758  rtol=1e-12
+    @test mehremlonderganmacfarlanefactor(4, 4, 4, 1.0, 1.02, big(0.03)) ≈ -10.9755226591813  rtol=1e-12
+
+
+    # types
+    @inferred Float32 mehremlonderganmacfarlanefactor3j(0, 0, 0, 1, 2, 1.5f0)
+    @inferred Float32 mehremlonderganmacfarlanefactor(0, 0, 0, 1, 2, 1.5f0)
+    @inferred BigFloat mehremlonderganmacfarlanefactor3j(0, 0, 0, 1, big(2), 1.5f0)
+    @inferred BigFloat mehremlonderganmacfarlanefactor(0, 0, 0, 1, big(2), 1.5f0)
 end
