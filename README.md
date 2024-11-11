@@ -3,9 +3,9 @@
 [![Build Status](https://github.com/hsgg/MehremLonderganMacfarlaneFactors.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/hsgg/MehremLonderganMacfarlaneFactors.jl/actions/workflows/CI.yml?query=branch%3Amain)
 -->
 
-This package implements the *Mehrem-Londergan-Macfarlane* factor as derived in
-Mehrem etal. 1991 . It is defined as the integral over three spherical Bessel
-functions,
+This [Julia](https://julialang.org/) package implements the *Mehrem-Londergan-Macfarlane* factor as derived in
+[Mehrem *etal.* (1991)](https://iopscience.iop.org/article/10.1088/0305-4470/24/7/018).
+It is defined as the integral over three spherical Bessel functions,
 ```math
 M_{\ell_1 \ell_2 \ell_3}(k_1, k_2, k_3) =
 \int_0^\infty dx\,x^2
@@ -15,7 +15,7 @@ M_{\ell_1 \ell_2 \ell_3}(k_1, k_2, k_3) =
 \,.
 ```
 We implement this factor multiplied by a Wigner $3j$-symbol, as written in
-Mehrem etal. 2010,
+[Mehrem & Hohenegger (2010)](https://arxiv.org/abs/1006.2108),
 ```math
 \begin{align}
 \begin{pmatrix} \ell_1 & \ell_2 & \ell_3 \\ 0 & 0 & 0 \end{pmatrix}
@@ -51,7 +51,7 @@ with $\theta$ the Heaviside function in half-maximum convention.
 
 ## Installation
 
-To install in as a Julia package, press `]` and run
+To install this Julia package, press `]` and run
 ```julia
 pkg> add https://github.com/hsgg/MehremLonderganMacfarlaneFactors.jl
 ```
@@ -74,6 +74,6 @@ which will return
 $$\begin{pmatrix} \ell_1 & \ell_2 & \ell_3 \\\ 0 & 0 & 0 \end{pmatrix}
 M_{\ell_1 \ell_2 \ell_3}(k_1, k_2, k_3)$$
 
-and so it won't blow up should the triangle condition on the $\ell_i$ be violated.
+and so it won't blow up in cases where the triangle condition on the $\ell_i$ is violated.
 
 
