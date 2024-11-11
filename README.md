@@ -77,3 +77,8 @@ M_{\ell_1 \ell_2 \ell_3}(k_1, k_2, k_3)$$
 and so it won't blow up in cases where the triangle condition on the $\ell_i$ is violated.
 
 
+## TODO
+
+- Choose $\ell_3$ to be the smallest angular momentum.
+- Choose $k_3 > 0.1 min(k_1, k_2)$.
+- Provide convenience function for choosing $\ell_3$ when it can be chosen freely.
