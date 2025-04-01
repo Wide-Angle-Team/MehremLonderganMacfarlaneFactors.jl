@@ -30,6 +30,29 @@ jobs:
         arch:
           - x64
     steps:
+      - name: Disk space info
+        run: |
+          echo "=== df -h"
+          df -h
+          echo "=== swapon"
+          swapon --show
+          echo "=== memory free -h"
+          free -h
+
+      - name: Disk cleaning
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /opt/hostedtoolcache/CodeQL
+          sudo docker image prune --all --force
+      - name: Disk space info post-cleaning
+        run: |
+          echo "=== df -h"
+          df -h
+          echo "=== swapon"
+          swapon --show
+          echo "=== memory free -h"
+          free -h
       - uses: actions/checkout@v4
       - uses: julia-actions/setup-julia@v2
         with:
