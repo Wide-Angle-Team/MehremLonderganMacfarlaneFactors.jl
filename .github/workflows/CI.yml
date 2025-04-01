@@ -38,8 +38,6 @@ jobs:
           swapon --show
           echo "=== memory free -h"
           free -h
-          echo "=== du -hsc ..."
-          du -hsc /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
 
           echo "=== Removing dotnet ..."
           sudo rm -rf /usr/share/dotnet
