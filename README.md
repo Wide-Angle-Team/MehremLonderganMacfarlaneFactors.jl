@@ -4,7 +4,7 @@
 -->
 
 This [Julia](https://julialang.org/) package implements the *Mehrem-Londergan-Macfarlane* factor as derived in
-[Mehrem *etal.* (1991)](https://iopscience.iop.org/article/10.1088/0305-4470/24/7/018).
+[Mehrem *etal.* (1991)](https://ui.adsabs.harvard.edu/abs/1991JPhA...24.1435M/abstract), published [here](https://iopscience.iop.org/article/10.1088/0305-4470/24/7/018).
 It is defined as the integral over three spherical Bessel functions,
 ```math
 M_{\ell_1 \ell_2 \ell_3}(k_1, k_2, k_3) =
@@ -83,4 +83,3 @@ and so it won't blow up in cases where the triangle condition on the $\ell_i$ is
 - Choose $k_3 > 0.1 min(k_1, k_2)$.
 - Provide convenience function for choosing $\ell_3$ when it can be chosen freely.
 - Add docstrings.
-- Check that this is the right name for it.
